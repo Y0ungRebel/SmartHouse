@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    tools:context=".MainActivity">
+    tools:context=".RegistrationActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -43,7 +43,8 @@
         android:scaleX="1.2"
         android:scaleY="1.2"
         android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/house" />
+        app:srcCompat="@drawable/house"
+        android:onClick="onClick"/>
 
     <TextView
         android:id="@+id/text_house"

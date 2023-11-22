@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreatePinActivity">
+    tools:context=".PinActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:id="@+id/data_field"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintTop_toBottomOf="@+id/text_house"
         android:layout_width="345dp"
         android:layout_height="305dp"
@@ -42,7 +42,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:scaleX="1"
         android:scaleY="1"
-        android:onClick="onClick"
         android:layout_marginTop="45dp"
         app:srcCompat="@drawable/house" />
 
@@ -52,19 +51,19 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="22dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textAlignment="center"
-        android:text="Создайте\nпин-код"/>
+        android:text="Умный дом"/>
 
     <ImageView
         android:id="@+id/first_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toStartOf="@+id/text_house"
         app:layout_constraintTop_toBottomOf="@+id/text_house"
@@ -76,7 +75,7 @@
         android:id="@+id/second_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="23dp"
         app:layout_constraintStart_toEndOf="@id/first_indicator"
         app:layout_constraintTop_toBottomOf="@+id/text_house"
@@ -88,7 +87,7 @@
         android:id="@+id/third_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="17dp"
         app:layout_constraintEnd_toStartOf="@+id/fourth_indicator"
         app:layout_constraintTop_toBottomOf="@+id/text_house"
@@ -100,7 +99,7 @@
         android:id="@+id/fourth_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         app:layout_constraintStart_toEndOf="@+id/text_house"
         app:layout_constraintTop_toBottomOf="@+id/text_house"
@@ -218,6 +217,30 @@
         android:layout_marginLeft="30dp"
         app:layout_constraintStart_toEndOf="@id/eighth_btn"
         app:layout_constraintTop_toTopOf="@id/eighth_btn"/>
+
+    <ImageButton
+        android:id="@+id/btn_registration"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/data_field"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#2A2A37"
+        android:onClick="onClick"
+        android:background="@drawable/btn_style"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выйти"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintTop_toTopOf="@+id/btn_registration"
+        app:layout_constraintBottom_toBottomOf="@id/btn_registration"
+        app:layout_constraintStart_toStartOf="@id/btn_registration"
+        app:layout_constraintEnd_toEndOf="@id/btn_registration"/>
 
 
 
