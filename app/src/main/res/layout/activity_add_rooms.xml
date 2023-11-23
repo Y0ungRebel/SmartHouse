@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AddRoomsActivity">
+
+    <ImageView
+        android:id="@+id/article"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:scaleX="1.05"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/article"/>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/article"
+        app:layout_constraintTop_toTopOf="@+id/article"
+        app:layout_constraintBottom_toBottomOf="@id/article"
+        android:src="@drawable/back_btn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить комнату"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/article"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_address"
+        android:hint="   Название комнаты"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColorHint="#94949B"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/article"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/aboutRooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintStart_toStartOf="@id/address"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#94949B"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="Выбрать комнату"/>
+
+    <ImageView
+        android:id="@+id/first_room"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/second_room"
+        app:layout_constraintTop_toBottomOf="@+id/aboutRooms"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ignore_room"/>
+
+    <ImageView
+        android:id="@+id/second_room"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutRooms"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ignore_room"/>
+
+    <ImageView
+        android:id="@+id/third_room"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/second_room"
+        app:layout_constraintTop_toBottomOf="@+id/aboutRooms"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ignore_room"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
