@@ -67,6 +67,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         android:textStyle="bold"
+        android:inputType="textEmailAddress"
         android:layout_marginTop="120dp"
         android:textSize="20dp"/>
 
@@ -113,6 +114,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="130dp"
+        android:onClick="Auth"
         android:background="@drawable/btn_style"/>
 
     <TextView
