@@ -139,6 +139,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="80dp"
+        android:onClick="Registration"
         android:background="@drawable/btn_style"/>
 
     <ImageButton
