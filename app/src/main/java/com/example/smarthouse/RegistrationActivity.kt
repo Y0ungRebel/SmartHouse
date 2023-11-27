@@ -43,10 +43,12 @@ class RegistrationActivity : AppCompatActivity() {
         editName = findViewById(R.id.name)
     }
 
-    fun onClick (view: View){
-        //val intent = Intent(this@RegistrationActivity, CreatePinActivity::class.java)
-        //startActivity(intent)
+    fun Back (view: View){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+    }
 
+    fun Registration(view: View){
         val emailValue = editEmail.getText().toString()
         val emailPattern = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                 "\\@" +
@@ -54,41 +56,31 @@ class RegistrationActivity : AppCompatActivity() {
                 "(" +
                 "\\." +
                 "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" + ")+"
+        if (emailValue.matches(emailPattern.toRegex()) && (!(editPassword.text.isEmpty())) && (!(editName.text.isEmpty()))) {
+            lifecycleScope.launch {
+                try {
+                    supabase.gotrue.signUpWith(Email) {
+                        email = editEmail.getText().toString()
+                        password = editPassword.getText().toString()
+                    }
+                    val user = supabase.gotrue.retrieveUserForCurrentSession(updateSession = true)
+                    val users = DataUser(name = editName.text.toString(), id = user.id)
+                    supabase.postgrest["Users"].insert(users)//, returning = Returning.MINIMAL)
 
-        //preferences = getSharedPreferences("UserInfo", 0)
+                    val intent = Intent(this@RegistrationActivity, CreatePinActivity::class.java)
+                    startActivity(intent)
+                } catch (e: Exception){
+                    //Log.e("Данные введены неправильно", e.toString())
+                    //Toast.makeText(this@RegistrationActivity, "Длина пароля должна быть минимум 6 символов!", Toast.LENGTH_SHORT).show()
+                }
+            }
 
-        if (emailValue.matches(emailPattern.toRegex())) {
-            //val editor: SharedPreferences.Editor = preferences.edit()
-            //editor.putString("email", emailValue)
-            //editor.apply()
-            Toast.makeText(this, "Успешно!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, CreatePinActivity::class.java)
-            startActivity(intent)
         } else if (!emailValue.matches(emailPattern.toRegex())) {
             Toast.makeText(this, "Почта введена неверно или не введена вовсе!", Toast.LENGTH_SHORT).show()
+        } else if (editPassword.text.isEmpty()) {
+            Toast.makeText(this, "Длина пароля должна быть минимум 6 символов!", Toast.LENGTH_SHORT).show()
+        } else if (editName.text.isEmpty()) {
+            Toast.makeText(this, "Придумайте имя пользователя!", Toast.LENGTH_SHORT).show()
         }
     }
-
-    fun Registration(view: View){
-        lifecycleScope.launch {
-            try {
-                supabase.gotrue.signUpWith(Email) {
-                    email = editEmail.getText().toString()
-                    password = editPassword.getText().toString()
-                }
-
-                val user = supabase.gotrue.retrieveUserForCurrentSession(updateSession = true)
-                val users = DataUser(name = editName.text.toString(), id = user.id)
-                supabase.postgrest["Users"].insert(users)//, returning = Returning.MINIMAL)
-
-                val intent = Intent(this@RegistrationActivity, CreatePinActivity::class.java)
-                startActivity(intent)
-            } catch (e: Exception){
-                //Log.e("Данные введены неправильно", e.toString())
-                Toast.makeText(this@RegistrationActivity, "Проверьте правильность введенных данных", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-
 }

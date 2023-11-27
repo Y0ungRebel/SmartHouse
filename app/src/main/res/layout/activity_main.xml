@@ -138,7 +138,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="40dp"
         android:backgroundTint="#2A2A37"
-        android:onClick="onClick"
+        android:onClick="Registration"
         android:background="@drawable/btn_style"/>
 
     <TextView
