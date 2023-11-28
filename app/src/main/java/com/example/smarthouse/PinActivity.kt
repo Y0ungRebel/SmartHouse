@@ -63,17 +63,17 @@ class PinActivity : AppCompatActivity() {
                 ind_4th.setImageResource(R.drawable.full_ellipse)
 
                 if (value == correctPin){
-                    val intent = Intent(this@PinActivity, AddressActivity::class.java)
+                    val intent = Intent(this@PinActivity, AllRoomsActivity::class.java)
                     startActivity(intent)
                 }
                 else {
                     Toast.makeText(this@PinActivity, "Пин-код неверный!", Toast.LENGTH_SHORT).show()
-//                    value = ""
-//                    ind_1st.setImageResource(R.drawable.empty_ellipse)
-//                    ind_2nd.setImageResource(R.drawable.empty_ellipse)
-//                    ind_3rd.setImageResource(R.drawable.empty_ellipse)
-//                    ind_4th.setImageResource(R.drawable.empty_ellipse)
-//                    return
+                    value = ""
+                    ind_1st.setImageResource(R.drawable.empty_ellipse)
+                    ind_2nd.setImageResource(R.drawable.empty_ellipse)
+                    ind_3rd.setImageResource(R.drawable.empty_ellipse)
+                    ind_4th.setImageResource(R.drawable.empty_ellipse)
+                    i=0
                 }
 
             }

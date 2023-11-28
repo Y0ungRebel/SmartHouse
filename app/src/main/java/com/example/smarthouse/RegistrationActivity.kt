@@ -50,12 +50,12 @@ class RegistrationActivity : AppCompatActivity() {
 
     fun Registration(view: View){
         val emailValue = editEmail.getText().toString()
-        val emailPattern = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+        val emailPattern = "[a-z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                 "\\@" +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                "[a-z0-9][a-z0-9\\-]{0,64}" +
                 "(" +
                 "\\." +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" + ")+"
+                "[a-z0-9][a-z0-9\\-]{0,25}" + ")+"
         if (emailValue.matches(emailPattern.toRegex()) && (!(editPassword.text.isEmpty())) && (!(editName.text.isEmpty()))) {
             lifecycleScope.launch {
                 try {
