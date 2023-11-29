@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class AddRoomsActivity : AppCompatActivity() {
+class AddDevicesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_rooms)
+        setContentView(R.layout.activity_add_devices)
     }
 
-    fun Back(view: View){
-        val intent = Intent(this@AddRoomsActivity, AllRoomsActivity::class.java)
+    fun Back (view: View){
+        val intent = Intent(this@AddDevicesActivity, DeviceActivity::class.java)
         startActivity(intent)
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".AddRoomsActivity">
+    tools:context=".AddDevicesActivity">
 
     <ImageView
         android:id="@+id/article"
@@ -30,7 +30,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить комнату"
+        android:text="Добавить устройство"
+        android:layout_marginLeft="10dp"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="22dp"
@@ -40,16 +41,30 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <EditText
-        android:id="@+id/address"
+        android:id="@+id/name"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:background="@drawable/edit_address"
-        android:hint="   Название комнаты"
+        android:hint="   Название устройства"
         android:textSize="16dp"
         android:textStyle="bold"
         android:textColorHint="#94949B"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/article"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/idenificator"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_address"
+        android:hint="   Идентификатор устройства"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColorHint="#94949B"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
@@ -57,49 +72,49 @@
         android:id="@+id/aboutRooms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/address"
-        app:layout_constraintStart_toStartOf="@id/address"
+        app:layout_constraintTop_toBottomOf="@id/idenificator"
+        app:layout_constraintStart_toStartOf="@id/idenificator"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:textColor="#94949B"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:text="Выбрать комнату"/>
+        android:text="Выбрать устройство"/>
 
     <ImageView
-        android:id="@+id/first_room"
+        android:id="@+id/light"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/second_room"
+        app:layout_constraintRight_toLeftOf="@+id/cond"
         app:layout_constraintTop_toBottomOf="@+id/aboutRooms"
         android:layout_marginTop="20dp"
         android:src="@drawable/active_room"/>
 
     <TextView
-        android:id="@+id/first_description"
+        android:id="@+id/light_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Гостиная"
+        android:text="Свет"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="#0B50A0"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/first_room"
-        app:layout_constraintLeft_toLeftOf="@id/first_room"
-        app:layout_constraintRight_toRightOf="@id/first_room"/>
+        app:layout_constraintTop_toBottomOf="@id/light"
+        app:layout_constraintLeft_toLeftOf="@id/light"
+        app:layout_constraintRight_toRightOf="@id/light"/>
 
     <ImageView
-        android:id="@+id/living_room"
+        android:id="@+id/light_room"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintLeft_toLeftOf="@id/first_room"
-        app:layout_constraintRight_toRightOf="@+id/first_room"
-        app:layout_constraintTop_toTopOf="@+id/first_room"
-        app:layout_constraintBottom_toBottomOf="@+id/first_room"
-        android:src="@drawable/living_white"/>
+        app:layout_constraintLeft_toLeftOf="@id/light"
+        app:layout_constraintRight_toRightOf="@+id/light"
+        app:layout_constraintTop_toTopOf="@+id/light"
+        app:layout_constraintBottom_toBottomOf="@+id/light"
+        android:src="@drawable/light_white"/>
 
     <ImageView
-        android:id="@+id/second_room"
+        android:id="@+id/cond"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -109,154 +124,122 @@
         android:src="@drawable/ignore_room"/>
 
     <TextView
-        android:id="@+id/second_description"
+        android:id="@+id/cond_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Кухня"
+        android:text="Кондиционер"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="#94949B"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/second_room"
-        app:layout_constraintLeft_toLeftOf="@id/second_room"
-        app:layout_constraintRight_toRightOf="@id/second_room"/>
+        app:layout_constraintTop_toBottomOf="@id/cond"
+        app:layout_constraintLeft_toLeftOf="@id/cond"
+        app:layout_constraintRight_toRightOf="@id/cond"/>
 
     <ImageView
-        android:id="@+id/kitchen_room"
+        android:id="@+id/cond_room"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintLeft_toLeftOf="@id/second_room"
-        app:layout_constraintRight_toRightOf="@+id/second_room"
-        app:layout_constraintTop_toTopOf="@+id/second_room"
-        app:layout_constraintBottom_toBottomOf="@+id/second_room"
-        android:src="@drawable/kitchen_white"/>
+        app:layout_constraintLeft_toLeftOf="@id/cond"
+        app:layout_constraintRight_toRightOf="@+id/cond"
+        app:layout_constraintTop_toTopOf="@+id/cond"
+        app:layout_constraintBottom_toBottomOf="@+id/cond"
+        android:src="@drawable/cond_white"/>
 
     <ImageView
-        android:id="@+id/third_room"
+        android:id="@+id/hood"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/second_room"
+        app:layout_constraintLeft_toRightOf="@+id/cond"
         app:layout_constraintTop_toBottomOf="@+id/aboutRooms"
         android:layout_marginTop="20dp"
         android:src="@drawable/ignore_room"/>
 
     <ImageView
-        android:id="@+id/bathroom_room"
+        android:id="@+id/hood_room"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintLeft_toLeftOf="@id/third_room"
-        app:layout_constraintRight_toRightOf="@+id/third_room"
-        app:layout_constraintTop_toTopOf="@+id/third_room"
-        app:layout_constraintBottom_toBottomOf="@+id/third_room"
-        android:src="@drawable/bathroom_white"/>
+        app:layout_constraintLeft_toLeftOf="@id/hood"
+        app:layout_constraintRight_toRightOf="@+id/hood"
+        app:layout_constraintTop_toTopOf="@+id/hood"
+        app:layout_constraintBottom_toBottomOf="@+id/hood"
+        android:src="@drawable/hood_white"/>
 
     <TextView
-        android:id="@+id/third_description"
+        android:id="@+id/hood_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ванная"
+        android:text="Вытяжка"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="#94949B"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/third_room"
-        app:layout_constraintLeft_toLeftOf="@id/third_room"
-        app:layout_constraintRight_toRightOf="@id/third_room"/>
+        app:layout_constraintTop_toBottomOf="@id/hood"
+        app:layout_constraintLeft_toLeftOf="@id/hood"
+        app:layout_constraintRight_toRightOf="@id/hood"/>
 
     <ImageView
-        android:id="@+id/fourth_room"
+        android:id="@+id/temperature"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/fifth_room"
-        app:layout_constraintTop_toBottomOf="@+id/first_description"
-        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toLeftOf="@+id/fan"
+        app:layout_constraintTop_toBottomOf="@+id/light"
+        android:layout_marginTop="40dp"
         android:src="@drawable/ignore_room"/>
 
     <ImageView
-        android:id="@+id/office_room"
+        android:id="@+id/temperature_room"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintLeft_toLeftOf="@id/fourth_room"
-        app:layout_constraintRight_toRightOf="@+id/fourth_room"
-        app:layout_constraintTop_toTopOf="@+id/fourth_room"
-        app:layout_constraintBottom_toBottomOf="@+id/fourth_room"
-        android:src="@drawable/cabinet_white"/>
+        app:layout_constraintLeft_toLeftOf="@id/temperature"
+        app:layout_constraintRight_toRightOf="@+id/temperature"
+        app:layout_constraintTop_toTopOf="@+id/temperature"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature"
+        android:src="@drawable/thermo_white"/>
 
     <TextView
-        android:id="@+id/fourth_description"
+        android:id="@+id/temperature_descriprion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Кабинет"
+        android:text="Температура"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="#94949B"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/fourth_room"
-        app:layout_constraintLeft_toLeftOf="@id/fourth_room"
-        app:layout_constraintRight_toRightOf="@id/fourth_room"/>
+        app:layout_constraintTop_toBottomOf="@id/temperature"
+        app:layout_constraintLeft_toLeftOf="@id/temperature"
+        app:layout_constraintRight_toRightOf="@id/temperature"/>
 
     <ImageView
-        android:id="@+id/fifth_room"
+        android:id="@+id/fan"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/second_description"
-        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/cond"
+        android:layout_marginTop="40dp"
         android:src="@drawable/ignore_room"/>
 
     <ImageView
-        android:id="@+id/bed_room"
+        android:id="@+id/fan_room"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintLeft_toLeftOf="@id/fifth_room"
-        app:layout_constraintRight_toRightOf="@+id/fifth_room"
-        app:layout_constraintTop_toTopOf="@+id/fifth_room"
-        app:layout_constraintBottom_toBottomOf="@+id/fifth_room"
-        android:src="@drawable/bed_white"/>
+        app:layout_constraintLeft_toLeftOf="@id/fan"
+        app:layout_constraintRight_toRightOf="@+id/fan"
+        app:layout_constraintTop_toTopOf="@+id/fan"
+        app:layout_constraintBottom_toBottomOf="@+id/fan"
+        android:src="@drawable/fan_white"/>
 
     <TextView
         android:id="@+id/fifth_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Спальня"
+        android:text="Вентилятор"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="#94949B"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/fifth_room"
-        app:layout_constraintLeft_toLeftOf="@id/fifth_room"
-        app:layout_constraintRight_toRightOf="@id/fifth_room"/>
-
-    <ImageView
-        android:id="@+id/sixth_room"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/fifth_room"
-        app:layout_constraintTop_toBottomOf="@+id/third_description"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ignore_room"/>
-
-    <ImageView
-        android:id="@+id/tv_room"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:layout_constraintLeft_toLeftOf="@id/sixth_room"
-        app:layout_constraintRight_toRightOf="@+id/sixth_room"
-        app:layout_constraintTop_toTopOf="@+id/sixth_room"
-        app:layout_constraintBottom_toBottomOf="@+id/sixth_room"
-        android:src="@drawable/tv_white"/>
-
-    <TextView
-        android:id="@+id/sixth_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Зал"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="#94949B"
-        android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/sixth_room"
-        app:layout_constraintLeft_toLeftOf="@id/sixth_room"
-        app:layout_constraintRight_toRightOf="@id/sixth_room"/>
+        app:layout_constraintTop_toBottomOf="@id/fan"
+        app:layout_constraintLeft_toLeftOf="@id/fan"
+        app:layout_constraintRight_toRightOf="@id/fan"/>
 
     <ImageButton
         android:id="@+id/btn_save"
@@ -279,6 +262,5 @@
         app:layout_constraintBottom_toBottomOf="@id/btn_save"
         app:layout_constraintStart_toStartOf="@id/btn_save"
         app:layout_constraintEnd_toEndOf="@id/btn_save"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

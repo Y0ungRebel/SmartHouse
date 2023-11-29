@@ -44,9 +44,6 @@ class ProfileActivity : AppCompatActivity() {
             try {
                 val user = supabase.gotrue.retrieveUserForCurrentSession(updateSession = true)
 
-                supabase.gotrue.modifyUser {
-                    userMail.setText(user.email)
-                }
 
                 val nameResponse = supabase.postgrest["Users"].select(columns = Columns.list("name")){
                     eq("id", user.id)
@@ -55,6 +52,11 @@ class ProfileActivity : AppCompatActivity() {
                 val objectName = arrayName.getJSONObject(0)
                 val name = objectName.getString("name")
                 userName.setText(name)
+
+
+                supabase.gotrue.modifyUser {
+                    userMail.setText(user.email)
+                }
 
 
                 val addressResponse = supabase.postgrest["Users"].select(columns = Columns.list("address")){
@@ -81,6 +83,10 @@ class ProfileActivity : AppCompatActivity() {
                     }
                 ) {
                     eq ("id", user.id)
+                }
+
+                supabase.gotrue.modifyUser {
+                    email = userMail.text.toString()
                 }
 
                 //обновление адреса

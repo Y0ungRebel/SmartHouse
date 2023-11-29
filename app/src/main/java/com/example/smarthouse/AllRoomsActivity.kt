@@ -60,4 +60,14 @@ class AllRoomsActivity : AppCompatActivity() {
         val intent = Intent(this@AllRoomsActivity, ProfileActivity::class.java)
         startActivity(intent)
     }
+
+    fun AddRooms(view: View){
+        val intent = Intent(this@AllRoomsActivity, AddRoomsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun livingRoom (view: View){
+        val intent = Intent(this@AllRoomsActivity, DeviceActivity::class.java)
+        startActivity(intent)
+    }
 }
